@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="by.nelyub.entities.Company" table="Company">
+        <id name="id" type="java.lang.Long">
+            <column name="COMPANY_ID" precision="5"/>
+            <generator class="sequence">
+                <param name="sequence">SEQ_COMPANY</param>
+            </generator>
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="42" not-null="true"/>
+        </property>
+
+        <set name="employees" table="EMPLOYEE_COMPANY" inverse="false" lazy="true" cascade="all" batch-size="10">
+            <key>
+                <column name="COMPANY_ID" not-null="true"/>
+            </key>
+            <many-to-many entity-name="by.nelyub.entities.Employee">
+                <column name="EMPLOYEE_ID" not-null="true"/>
+            </many-to-many>
+        </set>
+
+       <set name="addresses" table="ADDRESS_COMPANY" inverse="false" lazy="false" cascade="all" batch-size="10">
+            <key>
+                <column name="COMPANY_ID" not-null="true"></column>
+            </key>
+            <many-to-many entity-name="by.nelyub.entities.Address">
+                <column name="ADDRESS_ID" not-null="true"/>
+            </many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>

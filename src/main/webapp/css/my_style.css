@@ -1,0 +1,226 @@
+body {
+    font-family: Arial;
+    width: 1200px;
+    margin: auto;
+    border: 1px;
+    border-style: solid;
+}
+
+a {
+    color: blue;
+}
+
+pre {
+    font-family: Arial;
+}
+
+header {
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.brand {
+    color: blue;
+    width: 350px;
+    float: left;
+    padding-left: 25px;
+}
+
+.language {
+    padding: 25px;
+    float: right;
+}
+.language a{
+    padding-left: 5px;
+}
+footer {
+    text-align: center;
+    border-top-width: 1px;
+    border-top-style: solid;
+    padding: 5px;
+    height: 50px;
+}
+
+.container {
+    margin-top: -5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.menu {
+    width: 20%;
+    float: left;
+    background-color: #adadad;
+    height: 175px;
+    margin-left: 15px;
+}
+
+.menu p {
+    padding: 5px;
+    background-color: #767676;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.content {
+    border: 1px solid;
+    padding-left: 15px;
+    float: right;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    vertical-align: top;
+    padding-bottom: 25px;
+    width: 75%;
+    min-height: 715px;
+}
+
+.label {
+    width: 115px;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+
+.desc {
+    width: 70%;
+    padding-top: 20px;
+    word-wrap: break-word;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.desc input {
+    width: 400px;
+}
+.desc h3{
+    white-space: pre-wrap;
+}
+.desc_date {
+    width: 70%;
+    display: inline-block;
+    padding-top: 40px;
+    word-wrap: break-word;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.desc p {
+    white-space: pre-wrap;
+}
+
+ul {
+    background-color: white;
+    margin-left: 25px;
+    margin-right: 5px;
+    padding-bottom: 25px;
+}
+
+li {
+    list-style-image: url(/image/menu.png);
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.content textarea {
+    width: 400px;
+    height: 150px;
+}
+
+.link {
+    float: right;
+    padding-right: 30px;
+    display: inline-flex;
+    padding-right: 15px;
+}
+.link a{
+    padding-right: 15px;
+}
+
+.btn {
+    padding-top: 10px;
+    padding-left: 25%;
+    padding-bottom: 190px;
+}
+
+.btn_view {
+    padding-left: 70%;
+    display: inline-flex;
+}
+
+
+.btn_view input[type="submit"] {
+    color: black;
+    border: 1px;
+    border-style: solid;
+    text-decoration: none;
+    padding: 2px 10px;
+    background-color: #dddddd;
+    margin-right: 10px;
+}
+
+.list {
+    display: inline-block;
+    width: 900px;
+}
+
+.title {
+    width: 70%;
+    float: left;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.date {
+    float: right;
+    padding-top: 25px;
+    padding-right: 30px;
+    text-decoration: underline;
+}
+
+.brief {
+    width: 70%;
+    padding-top: 50px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.list form {
+    float: right;
+    padding-right: 25px;
+}
+
+button a {
+    color: black;
+    text-decoration: none;
+}
+
+button a:visited {
+    color: black;
+}
+
+a:visited {
+    color: blue;
+}
+
+.error {
+    color: red;
+    width: 30%;
+    display: inline-block;
+    float: right;
+}
+
+.error_title {
+    color: red;
+    display: inline-block;
+    float: right;
+    width: 30%;
+}
+
+textarea {
+    display: inline-block;
+    float: left;
+}

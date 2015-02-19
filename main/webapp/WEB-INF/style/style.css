@@ -1,0 +1,89 @@
+body{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.button {
+    background: #55b564;
+    background-image: -webkit-linear-gradient(top, #55b564, #36804a);
+    background-image: -moz-linear-gradient(top, #55b564, #36804a);
+    background-image: -ms-linear-gradient(top, #55b564, #36804a);
+    background-image: -o-linear-gradient(top, #55b564, #36804a);
+    background-image: linear-gradient(to bottom, #55b564, #36804a);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-size: 25px;
+    padding: 10px 20px 10px 20px;
+    border: solid aliceblue 4px;
+    text-decoration: none;
+}
+.button:hover {
+    background: #8dcc94;
+    background-image: -webkit-linear-gradient(top, #8dcc94, #8dcc94);
+    background-image: -moz-linear-gradient(top, #8dcc94, #8dcc94);
+    background-image: -ms-linear-gradient(top, #8dcc94, #8dcc94);
+    background-image: -o-linear-gradient(top, #8dcc94, #8dcc94);
+    background-image: linear-gradient(to bottom, #8dcc94, #8dcc94);
+    text-decoration: none;
+}
+.offices{
+    width: 80%;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    color: aquamarine;
+}
+
+table{
+    width: 95%;
+}
+li{
+    text-align: left;
+}
+table tr:nth-child(odd){ background-color:#aad4ff; }
+table tr:nth-child(even)    { background-color:#ffffff; }
+table td{
+    vertical-align:middle;
+    text-align:center;
+    padding:7px;
+    font-size:20px;
+    font-weight:normal;
+}
+table thead tr td{
+    background:-o-linear-gradient(bottom, #005fbf 5%, #003f7f 100%);
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #005fbf), color-stop(1, #003f7f) );
+    background:-moz-linear-gradient( center top, #005fbf 5%, #003f7f 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#005fbf", endColorstr="#003f7f");
+    background: -o-linear-gradient(top,#005fbf,003f7f);
+    background-color:#005fbf;
+    text-align:center;
+    font-size:20px;
+    font-family:Arial;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+.scrollup{
+    position:fixed;
+    bottom:150px;
+    right:20px;
+    font-size: 105px;
+    display: none;
+    padding-right: 10px;
+    background: url('up1.jpg') no-repeat;
+    width: 35px;
+    height: 35px;
+}
+.label{
+    width: 110px;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bolder;
+}
+.input{
+    margin-top: 20px;
+    display: inline-block;
+    vertical-align: top;
+}

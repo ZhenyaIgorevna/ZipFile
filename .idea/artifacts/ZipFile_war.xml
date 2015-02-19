@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ZipFile:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="by.nelyub.war">
+      <element id="artifact" artifact-name="ZipFile:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="by.nelyub.entities.Country" table="Country">
+        <id name="id" type="java.lang.Long">
+                <column name="COUNTRY_ID" precision="5"/>
+            <generator class="sequence">
+                <param name="sequence">SEQ_COUNTRY</param>
+            </generator>
+        </id>
+
+        <property name="name" type="string">
+            <column name="NAME" not-null="true"/>
+        </property>
+
+        <set name="cities" table="CITY" inverse="true" lazy="false" batch-size="10">
+            <key>
+                <column name="COUNTRY_ID" not-null="true"/>
+            </key>
+            <one-to-many class="by.nelyub.entities.City"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

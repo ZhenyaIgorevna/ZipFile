@@ -1,0 +1,16 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dbService" class="by.nelyub.service.DBService">
+        <property name="companiesDao" ref="companiesDao"/>
+    </bean>
+    <bean id="employeeListController" class="by.nelyub.controller.EmployeeListController">
+        <property name="service" ref="dbService"/>
+    </bean>
+    <bean id="companiesDao" class="by.nelyub.dao.CompaniesDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>
