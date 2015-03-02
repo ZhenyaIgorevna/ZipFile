@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="by.bsu.entities.user.User" table="users" catalog="test">
+    <class name="by.bsu.entities.user.User" table="Users">
         <id name="login" type="string">
             <column name="login" length="100" not-null="true" />
             <generator class="assigned" />
@@ -10,11 +10,11 @@
         <property name="password" type="string">
             <column name="password" length="100" not-null="true" />
         </property>
-        <property name="enabled" type="boolean">
-            <column name="enabled" not-null="true" />
-        </property>
-        <property name="role" type="org.hibernate.type.EnumType">
-            <column name="role" not-null="true" length="10"/>
+        <property name="role" column="role">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">by.bsu.entities.user.UserRole</param>
+                <param name="useNamed">true</param>
+            </type>
         </property>
     </class>
 </hibernate-mapping>

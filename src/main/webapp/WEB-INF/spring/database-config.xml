@@ -13,7 +13,7 @@
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location">
-            <value>classpath*:database.properties</value>
+            <value>classpath:database.properties</value>
         </property>
     </bean>
 
@@ -21,7 +21,6 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
 
-        <property name="driverClassName" value="oracle.jdbc.pool.OracleDataSource" />
         <property name="driverClassName" value="oracle.jdbc.pool.OracleDataSource" />
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
@@ -41,7 +40,7 @@
         <property name="dataSource" ref="dataSource" />
         <property name="mappingResources">
             <list>
-                <value>by/bsu/entities/user/Users.hbm.xml</value>
+                <value>by/bsu/entities/user/User.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -50,6 +49,7 @@
                     org.hibernate.dialect.Oracle10gDialect
                 </prop>
                 <prop key="hibernate.format_sql">true</prop>
+                <prop key="current_session_context_class">thread</prop>
                 <prop key="hibernate.show_sql">false</prop>
             </props>
         </property>

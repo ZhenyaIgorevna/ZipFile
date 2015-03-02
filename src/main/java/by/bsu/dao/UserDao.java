@@ -1,6 +1,8 @@
 package by.bsu.dao;
 
 import by.bsu.entities.user.User;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import java.util.ArrayList;
@@ -13,15 +15,22 @@ public class UserDao implements IUserDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public User findUserByLogin(String login) throws DaoException {
-        List<User> users = new ArrayList<>();
-        users = getSessionFactory().getCurrentSession()
-                .createQuery("from User where login=?")
-                .setParameter(0, login).list();
-        if (users.size() > 0) {
-            return users.get(0);
-        } else {
-             throw new DaoException("No user with such name");
+    public User findUserByUsername(String username) throws DaoException {
+        try {
+            List<User> users = new ArrayList<>();
+            Session session = sessionFactory.getCurrentSession();
+            //Query query = session.createQuery("from User u where u.login=:login")
+                  //  .setParameter("login", login);
+            users = session.createQuery("from User").list();
+            System.out.println("USers"+users.size());
+            if (users.size() > 0) {
+                return users.get(0);
+            } else {
+                throw new DaoException("No user with such name");
+            }
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            throw new DaoException(e.getMessage(), e);
         }
     }
 
