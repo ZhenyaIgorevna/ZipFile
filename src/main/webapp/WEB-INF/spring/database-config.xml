@@ -13,26 +13,18 @@
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location">
-            <value>classpath:database.properties</value>
+            <value>classpath:oracle12c_database.properties</value>
         </property>
     </bean>
 
     <!-- MySQL data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
-
         <property name="driverClassName" value="oracle.jdbc.pool.OracleDataSource" />
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
     </bean>
-
-    <!--<bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close">
-        <property name="URL" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-        <property name="connectionCachingEnabled" value="true"/>
-    </bean>-->
 
     <!-- Hibernate session factory -->
     <bean id="sessionFactory"
@@ -55,12 +47,12 @@
         </property>
     </bean>
 
-    <bean id="userDao" class="by.bsu.dao.UserDao">
+    <bean id="userDao" class="by.bsu.dao.impl.UserDao">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <bean id="userService"
-          class="by.bsu.service.UserService">
+          class="by.bsu.service.impl.UserService">
         <property name="userDao" ref="userDao" />
     </bean>
 
@@ -78,6 +70,7 @@
         </tx:attributes>
     </tx:advice>
 
+    <!--What is it???-->
     <aop:config>
         <aop:pointcut id="userServicePointCut"
                       expression="execution(* by.bsu.service.*Service.*(..))" />

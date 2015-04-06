@@ -1,4 +1,4 @@
-package by.bsu.service;
+package by.bsu.service.impl;
 
 import by.bsu.dao.DaoException;
 import by.bsu.dao.IUserDao;

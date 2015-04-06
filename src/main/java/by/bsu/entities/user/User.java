@@ -1,5 +1,7 @@
 package by.bsu.entities.user;
 
+import by.bsu.entities.user.UserRole;
+
 /**
  * Created by Yauheniya_Neliub on 2/24/2015.
  */

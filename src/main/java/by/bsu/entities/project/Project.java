@@ -1,4 +1,4 @@
-package by.bsu.entities;
+package by.bsu.entities.project;
 
 /**
  * Created by Yauheniya_Neliub on 2/9/2015.

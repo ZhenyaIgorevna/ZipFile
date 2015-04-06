@@ -1,5 +1,7 @@
-package by.bsu.dao;
+package by.bsu.dao.impl;
 
+import by.bsu.dao.DaoException;
+import by.bsu.dao.IUserDao;
 import by.bsu.entities.user.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -16,13 +18,12 @@ public class UserDao implements IUserDao {
 
     @Override
     public User findUserByUsername(String username) throws DaoException {
+        Session session = null;
         try {
             List<User> users = new ArrayList<>();
-            Session session = sessionFactory.getCurrentSession();
-            //Query query = session.createQuery("from User u where u.login=:login")
-                  //  .setParameter("login", login);
+            session = sessionFactory.openSession();//CHANGE!!!
             users = session.createQuery("from User").list();
-            System.out.println("USers"+users.size());
+            System.out.println("USers" + users.size());
             if (users.size() > 0) {
                 return users.get(0);
             } else {
@@ -31,6 +32,10 @@ public class UserDao implements IUserDao {
         } catch (HibernateException e) {
             e.printStackTrace();
             throw new DaoException(e.getMessage(), e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
         }
     }
 

@@ -1,7 +1,7 @@
 package by.bsu.controller;
 
-import by.bsu.entities.ProjectNode;
-import by.bsu.entities.ProjectTree;
+import by.bsu.entities.project.ProjectNode;
+import by.bsu.entities.project.ProjectTree;
 import by.bsu.exception.CreateException;
 import by.bsu.exception.FileException;
 import by.bsu.file.ReadZipFile;

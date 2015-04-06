@@ -26,6 +26,7 @@
         <param-value>
             /WEB-INF/spring/database-config.xml,
             /WEB-INF/spring/security-config.xml
+            /WEB-INF/spring/bean-config.xml
         </param-value>
     </context-param>
 

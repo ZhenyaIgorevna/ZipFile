@@ -1,7 +1,7 @@
 package by.bsu.parser;
 
-import by.bsu.entities.EntityName;
-import by.bsu.entities.ProjectTree;
+import by.bsu.entities.project.EntityName;
+import by.bsu.entities.project.ProjectTree;
 import by.bsu.exception.CreateException;
 
 import java.util.LinkedList;

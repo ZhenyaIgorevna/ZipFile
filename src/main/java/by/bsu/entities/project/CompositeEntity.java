@@ -1,4 +1,4 @@
-package by.bsu.entities;
+package by.bsu.entities.project;
 
 import java.util.List;
 

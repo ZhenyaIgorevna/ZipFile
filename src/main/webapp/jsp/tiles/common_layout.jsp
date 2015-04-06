@@ -5,6 +5,7 @@
 <html>
 <head>
     <link href="<c:url value='/css/style.css'/>" rel="stylesheet">
+    <link href="<c:url value='/css/menu.css'/>" rel="stylesheet">
     <title><tiles:insertAttribute name="title"/></title>
 </head>
 <body>

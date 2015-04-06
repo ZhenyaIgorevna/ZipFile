@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean class="by.bsu.dao.impl.FacultyDao" id="facultyDao">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <bean class="by.bsu.dao.impl.UniversityDao" id="universityDao">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean class="by.bsu.service.impl.FacultyService" id="facultyService">
+        <property name="facultyDao" ref="facultyDao"/>
+    </bean>
+
+    <bean class="by.bsu.service.impl.UniversityService" id="universityService">
+        <property name="universityDao" ref="universityDao"/>
+    </bean>
+
+    <bean class="by.bsu.controller.AdminController" id="adminController">
+        <property name="facultyService" ref="facultyService"/>
+        <property name="universityService" ref="universityService"/>
+    </bean>
+</beans>

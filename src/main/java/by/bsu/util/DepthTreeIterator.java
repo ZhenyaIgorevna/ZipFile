@@ -1,6 +1,6 @@
 package by.bsu.util;
 
-import by.bsu.entities.ProjectNode;
+import by.bsu.entities.project.ProjectNode;
 
 import java.util.HashMap;
 import java.util.Iterator;

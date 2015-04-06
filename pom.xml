@@ -9,8 +9,9 @@
   <url>http://maven.apache.org</url>
 
     <build>
-        <finalName>NewsRestService</finalName>
+        <finalName>CodeProject</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
+
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -19,6 +20,62 @@
                 <directory>src/main/resources</directory>
             </resource>
         </resources>
+
+
+        <!--<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    &lt;!&ndash;<fork>true</fork>&ndash;&gt;
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+                    <warName>${project.build.finalName}</warName>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port>
+                    <path>/</path>
+                    <systemProperties>
+                        <JAVA_OPTS>-Xms256m -Xmx750m -XX:MaxPermSize=512m</JAVA_OPTS>
+                    </systemProperties>
+                    &lt;!&ndash;<update>true</update>
+                    <url>http://localhost:8080/manager/html</url>
+                    <username>admin</username>
+                    <password>password</password>&ndash;&gt;
+                    &lt;!&ndash;<url>http://localhost:8080/manager/text</url>
+                    <server>TomcatServer</server>&ndash;&gt;
+                    &lt;!&ndash;<warFile>${project.build.finalName}</warFile>&ndash;&gt;
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>-->
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -26,9 +83,9 @@
                 <version>3.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <fork>true</fork>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <!--<fork>true</fork>-->
                 </configuration>
             </plugin>
             <plugin>
@@ -41,7 +98,6 @@
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
                     </archive>
-
                 </configuration>
             </plugin>
             <plugin>
@@ -49,20 +105,11 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <port>8090</port>
+                    <port>8080</port>
                     <path>/</path>
                     <systemProperties>
                         <JAVA_OPTS>-Xms256m -Xmx750m -XX:MaxPermSize=512m</JAVA_OPTS>
                     </systemProperties>
-
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.17</version>
-                <configuration>
-                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
@@ -81,7 +128,7 @@
         <hibernate.version>4.2.11.Final</hibernate.version>
         <dbcp.version>1.4</dbcp.version>
         <logback.version>1.1.2</logback.version>
-        <oracle.jdbc.version>11.2.0</oracle.jdbc.version>
+        <oracle.jdbc.version>12.1.0.1</oracle.jdbc.version>
 
 
 
@@ -215,7 +262,7 @@
         <!--Oracle jdbc-->
         <dependency>
             <groupId>com.oracle</groupId>
-            <artifactId>ojdbc6</artifactId>
+            <artifactId>ojdbc7</artifactId>
             <version>${oracle.jdbc.version}</version>
         </dependency>
 

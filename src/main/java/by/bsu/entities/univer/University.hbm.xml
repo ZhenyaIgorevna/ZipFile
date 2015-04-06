@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="by.bsu.entities.univer.University" table="University">
+        <id name="id" type="java.lang.Integer">
+            <column name="UN_ID" precision="5"/>
+            <generator class="sequence">
+                <param name="sequence">UNIVER_SEQ</param>
+            </generator>
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="100" not-null="true"/>
+        </property>
+        <set name="faculties" table="FACULTY"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="UN_ID" not-null="true" />
+            </key>
+            <one-to-many class="by.bsu.entities.univer.Faculty" />
+        </set>
+    </class>
+</hibernate-mapping>
